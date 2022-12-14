@@ -1,6 +1,7 @@
 const User = require("./models/User");
 const Room = require("./models/Rooms");
 const { ObjectId } = require("mongodb");
+
 module.exports = async (io) => {
   await io.on("connection", (socket) => {
     if (io.req) {
@@ -30,7 +31,7 @@ module.exports = async (io) => {
               name: data.name,
               avatar: data.avatar,
             });
-          }, 5000);
+          }, 4000);
         });
 
         socket.on("answerCall", (data) => {
